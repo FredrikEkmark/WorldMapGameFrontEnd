@@ -1,0 +1,117 @@
+.main {
+    display:flex;
+    --s: 60px;  /* size  */
+    --m: 0px;    /* margin */
+    --f: calc(1.732 * var(--s) + 4 * var(--m)  - 1px);
+  }
+  
+  .container {
+    background-color: #000;
+    border: #000;
+    border-style: solid;
+    border-width: 0px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    width: 1200px;
+    height: 1109px;
+    font-size: 0; /*disable white space between inline block element */
+  }
+  
+  .container div {
+    width: var(--s);
+    margin: var(--m);
+    height: calc(var(--s)*1.1547); 
+    display: inline-block;
+    font-size:initial;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    margin-bottom: calc(var(--m) - var(--s)*0.2885); 
+  }
+
+  .container div.leftEdge {
+    clip-path: polygon(50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  }
+  .container div.rightEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 50% 0%);
+  }
+  .container div.topEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+  }
+  .container div.bottomEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 100% 75%, 100% 25%, 50% 0%);
+  }
+  .container div.leftTopEdge {
+    clip-path: polygon(50% 100%, 100% 75%, 100% 25%, 50% 25%);
+  }
+  .container div.rightTopEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 50% 25%);
+  }
+  .container div.leftBottomEdge {
+    clip-path: polygon(50% 75%, 100% 75%, 100% 25%, 50% 0%);
+  }
+  .container div.rightBottomEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 50% 75%, 50% 0%);
+  }
+
+
+  .container div.NOTleftEdge {
+    clip-path: polygon(50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  }
+  .container div.NOTrightEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 50% 0%);
+  }
+  .container div.NOTtopEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+  }
+  .container div.NOTbottomEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 100% 75%, 100% 25%, 50% 0%);
+  }
+  .container div.NOTleftTopEdge {
+    clip-path: polygon(50% 100%, 100% 75%, 100% 25%, 50% 25%);
+  }
+  .container div.NOTrightTopEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 50% 25%);
+  }
+  .container div.NOTleftBottomEdge {
+    clip-path: polygon(50% 75%, 100% 75%, 100% 25%, 50% 0%);
+  }
+  .container div.NOTrightBottomEdge {
+    clip-path: polygon(0% 25%, 0% 75%, 50% 75%, 50% 0%);
+  }
+  
+  .container::before {
+    content: "";
+    width: calc(var(--s)/2 + var(--m));
+    float: left;
+    height: 120%;
+    shape-outside: repeating-linear-gradient(     
+                     #0000 0 calc(var(--f) - 3px),      
+                     #000  0 var(--f));
+  }
+
+  .grasland {
+    background: lightgreen;
+  }
+
+  .forest {
+    background: green;
+  }
+
+  .sea {
+    background: blue;
+  }
+
+  .costalsea {
+    background: lightblue;
+  }
+
+  .desert {
+    background: sandybrown;
+  }
+
+  .mountain {
+    background: gray;
+  }
+
+  #div {
+    padding-top: 30em;
+  }
